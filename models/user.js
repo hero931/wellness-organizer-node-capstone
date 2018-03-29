@@ -1,10 +1,15 @@
 "use strict";
 
+
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 
 const userSchema = new mongoose.Schema({
-    username: {
+    firstName: {
+        type: String,
+        required: false
+    },
+    userName: {
         type: String,
         required: false
     },

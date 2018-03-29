@@ -1,0 +1,664 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    padding: 0;
+    margin: 0;
+    background-color: #f4f4f4;
+}
+
+/* Global */
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+
+/* Header */
+
+header {
+    background: #35424a;
+    color: #ffffff;
+    padding-top: 30px;
+    min-height: 70px;
+    border-bottom: #e8491d 3px solid;
+}
+
+header a {
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+    transition: color 600ms;
+}
+
+header .highlight,
+header .current a {
+    color: #e8491d;
+    font-weight: bold;
+}
+
+header a:hover {
+    color: #cccccc;
+    font-weight: bold;
+}
+
+header ul {
+    margin: 0;
+    padding: 0;
+}
+
+header li {
+    float: left;
+    display: inline;
+    padding: 0 10px 0 20px;
+
+}
+
+header #header {
+    float: left;
+}
+
+header #header h1 {
+    margin: 0;
+}
+
+header nav {
+    float: right;
+    margin-top: 10px;
+}
+
+/* Main */
+
+#main .nut,
+.pro,
+.rec {
+    padding: 15px;
+    background: #4FA78F;
+    color: #ffffff;
+    width: 30%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+
+}
+
+#main {
+    background: url(../images/workout.jpg) no-repeat;
+}
+
+/* Langing*/
+
+#landing_section {
+    min-height: 400px;
+    background: url(../images/background1.jpg) no-repeat;
+    background-size: cover;
+    background-position: center center;
+    text-align: center;
+    color: #ffffff;
+}
+
+#landing_section div {
+    width: 50%;
+    float: right;
+    margin-right: 20px;
+}
+
+#landing_section h1 {
+    font-size: 25px;
+}
+
+#landing_section p {
+    font-size: 17px;
+}
+
+#landing_section span {
+    font-size: 18px;
+}
+
+#nutrition {
+    margin-bottom: 20px;
+    border-bottom-style: solid;
+    border-bottom-width: thin;
+    background-color: #C9CE9F;
+
+}
+
+#nutrition button {
+    height: 25px;
+    background: #e8491d;
+    border: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #ffffff;
+    margin-left: 10px;
+
+}
+
+#nutrition button:hover {
+    background: #cccccc;
+}
+
+#nutrition textarea {
+    width: 30%;
+    height: 200px;
+    float: left;
+    margin-right: 15px;
+    margin-bottom: 25px;
+    font-size: 15px;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid;
+    box-shadow: 5px 10px #888888;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#nutrition h1 {
+    color: #e8491d;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    font-size: 25px;
+}
+
+#workout button {
+    height: 25px;
+    background: #e8491d;
+    border: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #ffffff;
+    margin-left: 10px;
+
+}
+
+#workout button:hover {
+    background: #cccccc;
+}
+
+#workout textarea {
+    width: 30%;
+    height: 200px;
+    float: left;
+    margin-right: 15px;
+    margin-bottom: 25px;
+    font-size: 15px;
+    text-align: left;
+    padding: 10px;
+    border: 1px solid;
+    box-shadow: 5px 10px #888888;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#workout h1 {
+    color: #e8491d;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    font-size: 25px;
+}
+
+#workout {
+    margin-bottom: 20px;
+    border-bottom-style: solid;
+    border-bottom-width: thin;
+    background-color: #C9CE9F;
+
+
+}
+
+#progress button {
+    height: 25px;
+    background: #e8491d;
+    border: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #ffffff;
+    margin-left: 10px;
+
+}
+
+#progress button:hover {
+    background: #cccccc;
+}
+
+#progress textarea {
+    width: 30%;
+    height: 200px;
+    float: left;
+    margin-right: 15px;
+    margin-bottom: 25px;
+    font-size: 15px;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid;
+    box-shadow: 5px 10px #888888;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#progress h1 {
+    color: #e8491d;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    font-size: 25px;
+}
+
+#progress {
+    margin-bottom: 20px;
+    border-bottom-style: solid;
+    border-bottom-width: thin;
+    background-color: #C9CE9F;
+}
+
+/* Records */
+
+#records {
+    width: 100%;
+    height: 100%;
+    background: url(../images/background.jpg);
+}
+
+#records button {
+    height: 25px;
+    background: #e8491d;
+    border: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #ffffff;
+    margin-left: 10px;
+    float: right;
+    margin-bottom: 2%;
+    margin-top: 45%;
+    margin-right: 2%;
+}
+
+#records button:hover {
+    background: #cccccc;
+}
+
+
+/*Login*/
+
+#login .box {
+    border: 10px solid transparent;
+    border-image: linear-gradient(to right, #e8491d 0%, purple 100%);
+    border-image-slice: 2;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    width: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    box-shadow: 15px 15px 40px rgba(25, 38, 51, 0.4);
+    text-align: center;
+}
+
+#login p {
+    margin-bottom: 10px;
+    margin-top: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+#login legend {
+    font-size: 30px;
+    font-family: 'Bungee Hairline', sans-serif;
+    font-weight: 900;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+#login form label {
+    font-family: 'Bungee Hairline', sans-serif;
+    font-size: 20px;
+    font-weight: 900;
+}
+
+#login input {
+    margin-top: 20px;
+    width: 70%;
+    max-width: 400px;
+    margin-bottom: 15px;
+}
+
+#login button {
+    height: 25px;
+    background: #e8491d;
+    border: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #ffffff;
+    margin-left: 10px;
+}
+
+#login button:hover {
+    background: #cccccc;
+}
+
+
+/* Info */
+
+#boxes_section {
+    margin-top: 20px;
+
+}
+
+#boxes_section span {
+    color: #e8491d;
+}
+
+#boxes_section .box {
+    float: left;
+    width: 30%;
+    text-align: center;
+    margin-right: 40px;
+}
+
+#boxes_section .box img {
+    width: 90px;
+}
+
+/* Signup */
+
+#signup_section {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#signup_section a {
+    text-decoration: none;
+    margin-top: 20px;
+    font-size: 17px;
+}
+
+#signup_section a:hover {
+    background: #cccccc;
+}
+
+#signup_section input {
+    padding: 4px;
+    height: 25px;
+    width: 250px;
+    margin-top: 20px;
+    margin-bottom: 25px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#signup_section button {
+    height: 25px;
+    background: #e8491d;
+    border: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #ffffff;
+    margin-left: 10px;
+}
+
+#signup_section button:hover {
+    background: #cccccc;
+}
+
+/* Records */
+
+#records .box {
+    border: 10px solid transparent;
+    border-image: linear-gradient(to right, grey 0%, purple 100%);
+    border-image-slice: 2;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    margin-top: 60px;
+    width: 50%;
+    height: 40%;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    box-shadow: 15px 15px 40px rgba(25, 38, 51, 0.4);
+    text-align: center;
+}
+
+/* Footer */
+
+#footer_section p {
+    text-align: center;
+    margin-top: 15px;
+}
+
+footer {
+    padding: 20px;
+    color: #ffffff;
+    background-color: #35424a;
+    border-top: #e8491d 3px solid;
+}
+
+/* MEDIA QUERIES */
+
+@media only screen and (max-width: 768px) {
+    header #header,
+    header nav,
+    header nav li {
+        float: none;
+        text-align: center;
+        width: 100%;
+        margin-bottom: 5%;
+    }
+    header nav li {
+        padding: 2%;
+    }
+    /*#landing_section {
+        background-position: top left;
+    }*/
+    #landing_section {
+        min-height: 180px;
+        background-position: top left;
+    }
+    #landing_section .container {
+        width: 95%;
+        color: dimgrey;
+        margin-top: 54%;
+        margin-bottom: 40px;
+    }
+
+    #boxes_section .box {
+        width: 100%;
+        margin-top: 20px;
+    }
+    #signup_section form input {
+        display: block;
+        width: 60%;
+        margin-left: 20%;
+    }
+    #signup_section button {
+        width: 40%;
+        margin-bottom: 30px;
+    }
+    #login .box {
+        width: 80%;
+    }
+    #nutrition,
+    #workout,
+    #progress {
+        width: 100%;
+        text-align: center;
+    }
+    #nutrition textarea,
+    #workout textarea,
+    #progress textarea {
+        width: 50%;
+        margin-left: 25%;
+        margin-bottom: 40px;
+        margin-top: 20px;
+    }
+    #nutrition button,
+    #workout button,
+    #progress button {
+        width: 15%;
+        margin-bottom: 20px;
+    }
+    #nutrition h1,
+    #workout h1,
+    #progress h1 {
+        margin-left: 10px;
+    }
+    #main {
+        width: 100%;
+    }
+    #main .nut,
+    .rec,
+    .pro {
+        width: 90%;
+        margin-top: 20%;
+        margin-right: 10%;
+    }
+    #main {
+        background: url(../images/workout.jpg);
+        background-size: 400% 200%;
+
+    }
+    #records .box {
+        width: 60%;
+        margin-top: 60px;
+    }
+    #records button {
+        margin-top: 72%;
+        margin-right: 2%;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    body {
+        font-size: 13px;
+    }
+    header #header,
+    header nav,
+    header nav li {
+        width: 10%;
+        margin-bottom: 5%;
+        display: block;
+        margin-left: 20%;
+    }
+    header nav li {
+        margin-left: 55%;
+    }
+
+    header a {
+        font-size: 13px;
+    }
+    #landing_section h1 {
+        font-size: 18px;
+    }
+
+    #landing_section p {
+        font-size: 14px;
+    }
+
+    #landing_section span {
+        font-size: 14px;
+    }
+    #landing_section .container {
+        width: 80%;
+        color: dimgrey;
+        margin-top: 100%;
+        margin-bottom: 40px;
+    }
+    #workout textarea {
+        font-size: 10px;
+    }
+
+    #workout h1 {
+        font-size: 17px;
+    }
+    #nutrition textarea {
+        font-size: 10px;
+    }
+    #nutrition h1 {
+        font-size: 17px;
+    }
+    #boxes_section .box {
+        width: 90%;
+        margin-top: 20%;
+        text-align: center;
+        float: right;
+    }
+    #signup_section a {
+        font-size: 12px;
+    }
+    #signup_section form input {
+        display: block;
+        width: 60%;
+        margin-left: 20%;
+    }
+    #signup_section button {
+        width: 40%;
+        margin-bottom: 30px;
+    }
+    #login .box {
+        width: 80%;
+        margin-bottom: 50%;
+        text-align: center;
+    }
+    #login button {
+        width: 50%;
+        margin-right: 10%;
+        margin-top: 10%;
+    }
+    #login p {
+        margin-top: 10%;
+    }
+    #login legend {
+        font-size: 21px;
+    }
+
+    #login form label {
+        font-size: 14px;
+    }
+    #nutrition,
+    #workout,
+    #progress {
+        width: 100%;
+        text-align: center;
+    }
+    #nutrition textarea,
+    #workout textarea,
+    #progress textarea {
+        width: 80%;
+        margin-left: 10%;
+        margin-bottom: 30%;
+        margin-top: 10%;
+    }
+    #nutrition button,
+    #workout button,
+    #progress button {
+        width: 30%;
+        margin-bottom: 20px;
+    }
+    #nutrition h1,
+    #workout h1,
+    #progress h1 {
+        margin-left: 15%;
+        width: 75%;
+        margin-top: 15%;
+        margin-bottom: 10%
+    }
+    #main {
+        width: 100%;
+    }
+    #main .nut,
+    .rec,
+    .pro {
+        width: 70%;
+        margin-top: 40%;
+        margin-left: 10%;
+    }
+    #main {
+        background: url(../images/workout.jpg);
+    }
+    #records .box {
+        width: 80%;
+        margin-top: 40%;
+    }
+    #records button {
+        margin-top: 135%;
+        width: 42%;
+        margin-right: 5px;
+    }
+}

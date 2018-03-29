@@ -1,35 +1,187 @@
-<!DOCTYPE html>
-<html lang="en">
+<DOCTYPE html>
+    <html>
 
-<head>
-    <meta charset="UTF-8">
-    <title>Not Just Luck: Banish Imposter Syndrome for Good!</title>
-    <!-- Responsive viewport -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="css/timeline.css">
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link re="stylesheet" href="css/jquery-ui.css">
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Berkshire+Swash|Crimson+Text|Montserrat" rel="stylesheet">
-</head>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <meta name="description" content="Wellness Organizer app">
+        <meta name="keywords" content="Web app for nutrition and workout">
+        <meta name="author" content="Ilya Andreev">
+        <title>Wellness Organizer</title>
+        <link rel="stylesheet" href="./css/index.css">
+    </head>
 
-<body>
+    <body>
+        <header role="banner">
+            <div class="container">
+                <div id=header>
+                    <a href="/">
+                        <h1><span class="highlight">Wellness</span> Organizer</h1>
+                    </a>
+                </div>
+                <nav>
+                    <ul>
+                        <li id="dashboard"><a href="/dashboard.html">Dashboard</a></li>
+                        <!--<li><a href="/login.html">Login</a></li>-->
+                        <li id="champion"><a href="#champion">Champion</a></li>
+                        <li id="home" class="current"><a href="/home.html">Home</a></li>
+                        <li id="rec"><a href="/records.html">Records</a></li>
+                        <li id="logout"><a onclick="location.reload();">Logout</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main class="home-page hide-me">
+            <section id="landing_section">
+                <div class="container">
+                    <h1>Workouts + Nutrition = Tailored for you</h1>
+                    <p>The diet plan you pulled off a free website probably won’t work for you in the long run. Whether it’s Paleo, Vegetarian, Keto, Whole 30, Calorie Counting, Atkins, or anything in between, you have to pick the plan that lines up with you.<br> It means the free YouTube workout video you watched won’t help you reach the exact goals you’ve laid out for yourself. Whether it’s a cardio kickboxing class, an ab-shredder program, or even bodyweight bootcamps, simply doing the workout won’t be enough to make you look like the model in the video.<br> <span>1.</span> With this app you can start having your own nutrition plan that is built for you based on your genetics, lifestyle, and preferences.<br> <span>2.</span> Let's start making your own workout plan crafted for your specific goals.</p>
+                </div>
+            </section>
 
-    <header>
+            <section id="boxes_section">
+                <div class="container">
+                    <div class="box">
+                        <img src="./images/Nut.png.png">
+                        <h3>Nutrition and workout</h3>
+                        <p><span>Eat</span> natural, whole foods whenever possible. Leave the soda, candy, and junk food out of your system. Make sure you get enough protein each day (meat, chicken, fish) – this helps with rebuilding muscles.<br> <span>We’re</span> genetically designed to be active. It’s time to try new things until you find something that you like. Sign up for a new class, join your company’s running club for a day, try out something in your basement or living room, just keep trying new stuff until you find something that you like. And then do it as often as you can. Use this app to keep track of your nutrition and workouts on the long run.</p>
+                    </div>
+                    <div class="box">
+                        <img src="./images/pro.png">
+                        <h3>Add your progress</h3>
+                        <p><span>You</span> can be at different levels for each exercise. Don’t do your workout two days in a row – give your muscles time to recover: every other day should be fine. In this app add each of your workouts: write down your total number of exercises. Your workout can be any exercises that you comfortable with at your level. This app will give you the option to compare your progress from workout to workout.</p>
+                    </div>
+                    <div class="box">
+                        <img src="./images/res.png">
+                        <h3>Check your records</h3>
+                        <p><span>It</span> is totaly up to you! You can do your workout on daily, weekly, 30 days basis. Give it a try and stay on top of it. Be consistent with whatever workout you decided to do. To see where you at with your goals, go to records section periodicly. That way you will be able to see how were you at certain point.</p>
+                    </div>
+                </div>
+            </section>
+            <section id="signup_section">
+                <form name="sign_up_form" id="signup_form">
+                    <input type="text" placeholder="First Name" value="userName" id="firstName" class="input" required>
+                    <input type="email" placeholder="Enter Email" value="demo@email.com" id="username" class="input username_input" required>
+                    <input type="password" placeholder="Enter Password" value="demouser" id="password" class="input password_input " required>
+                    <button type="submit" class="button_submit">Register</button>
+                    <br>
+                    <a href="" class="activate-login">Already have account. Login here!</a>
+                </form>
+            </section>
+        </main>
 
-    </header>
-    <main>
+        <main class="login-page hide-me">
+            <section id="login">
+                <div class="container">
+                    <form id="login_form">
+                        <div class="box">
+                            <!--<div class="alert hidden" aria-hidden="true"><p> You have entered an incorrect username or password. </p></div>-->
+                            <legend>Login</legend>
+                            <label for="email">Email Address </label>
+                            <br>
+                            <input type="email" placeholder="Enter Email" value="demo@email.com" required>
+                            <br>
+                            <label for="password">Password </label>
+                            <br>
+                            <input type="password" placeholder="Enter Password" value="demouser" required>
+                            <br>
+                            <button type="submit" id="login_submit" class="button_submit">Submit</button>
+                            <p>If you are interested in testing Wellness Organizer, please use the demo account. Username: demo@email.com; Password: demouser</p>
+                        </div>
+                    </form>
 
-    </main>
-    <footer>
+                </div>
+            </section>
+        </main>
+        <main class="dashboard-page hide-me">
+            <section id="nutrition">
+                <div class="container">
+                    <h1>Nutrition</h1>
+                    <button type="text" class="buttonN_add">Add</button>
+                    <button type="text" class="buttonN_read">Read</button>
+                    <button type="text" class="buttonN_update">Update</button>
+                    <button type="text" class="buttonN_delete">Delete</button>
+                    <input type="hidden" class="nutritionUserName" value="">
+                    <textarea>Meat – GRASS-FED*, not grain-fed. Grain causes the same problem in animals as they do in humans.
+                    Fowl – Chicken, duck, hen, turkey…things with wings that (try to) fly.
+                    Fish – Wild fish, as mercury and other toxins can be an issue in farmed fish
+                    Eggs – Look for omega-3 enriched cage free eggs.
+                    Vegetables – As long as they’re not deep-fried, eat as many as you want.
+                    Oils – Olive oil, coconut oil, avocado oil – think natural.
+                    Fruits – Have natural sugar, and can be higher in calories, so limit if you’re trying to lose weight.
+                    Nuts – High in calories, so they’re good for a snack, but don’t eat bags and bags of them.
+                    Tubers – Sweet potatoes and yams. Higher in calories and carbs, so these are good for right after a workout to replenish your glycogen levels.
+                    *If you can only afford grain-fed meat, that’s still better than grains. Do the best you can with your situation! </textarea>
+                </div>
+            </section>
+            <section id="workout">
+                <div class="container">
+                    <h1>Workout</h1>
+                    <button type="text" class="buttonW_add">Add</button>
+                    <button type="text" class="buttonW_read">Read</button>
+                    <button type="text" class="buttonW_update">Update</button>
+                    <button type="text" class="buttonW_delete">Delete</button>
+                    <input type="hidden" class="workoutUserName" value="">
+                    <textarea>
+                    20 bodyweight squats
+                    10 push ups
+                    20 walking lunges –
+                    10 each leg
+                    10 dumbbell rows
+                    (using a gallon milk jug or another weight)
+                    15 second plank
+                    30 jumping jacks</textarea>
+                </div>
+            </section>
+            <section id="progress">
+                <div class="container">
+                    <h1>Progress</h1>
+                    <button type="text" class="buttonP_add">Add</button>
+                    <button type="text" class="buttonP_read">Read</button>
+                    <button type="text" class="buttonP_update">Update</button>
+                    <button type="text" class="buttonP_delete">Delete</button>
+                    <input type="hidden" class="progressUserName" value="">
+                    <textarea>Determine your goals or habits you want to establish! </textarea>
+                </div>
+            </section>
+        </main>
 
-    </footer>
-    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-    <script src="js/jquery-2.2.3.min.js"></script>
-    <script src="js/jquery-ui.js"></script>
-    <script src="client.js" type="text/javascript"></script>
-</body>
+        <main class="champion-page hide-me">
+            <a name="champion"></a>
+            <section id="main">
+                <div class="container">
+                    <div class="nut">
+                        <h1>Explosive leg work</h1>
+                        <p>Level One: Alternating Step Ups (10 each leg) – Step with one leg, explode the other knee up towards the sky. Step back down, and switch legs. If you can’t explode the other knee up yet, just come to a full standing position on the top of the bench – that’s more than okay!<br> Level Two: Bench Jumps (10 reps) – Jump as high as possible, landing as softly as possible with a mid-foot strike. DO NOT JUMP DOWN – that’s how people blow out their achilles’ tendons. Step down. You’re welcome!</p>
+                    </div>
+                    <div class="pro">
+                        <h1>Push Exercise</h1>
+                        <p>Level One: Elevated Push Ups – Use the back of a bench to do your push ups. Keep your abs and butt tight and your elbows at your side. If you need to do your push ups against a wall or a fence, that’s okay too.<br> Level Two: Lower Incline Push Ups – use the seat part of a bench for your push ups.<br> Level Three: Regular Push Ups – If you can complete 3 sets of 10, aim for 3 sets of 20. If you can do that, make them harder by wearing a backpack or doing plyometric push ups.</p>
+                    </div>
+                    <div class="rec">
+                        <h1>Pull Exercise</h1>
+                        <p>Level One: Swing Rows – Grab the chains of a swing, lean back, make your body tight and straight, and use your back and arm muscles to pull yourself up.<br> Level Two: Body Rows – Find a bar that’s low enough, the underside of a table, a set of ladder rungs, whatever! Make your body into a tight plank, and use your arms to pull yourself up. Your park might even have a bar at this perfect height.<br> Level Three: Pull Ups – Grab the bar with palms AWAY from you (pull up) or FACING you (chin up). Engage your shoulders (pull your shoulder blades back and downward), keep your core tight, and pull your chest up towards the bar. If these are too tough, do NEGATIVES – jump above the bar, and lower yourself slowly.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
 
-</html>
+        <main class="records-page hide-me">
+            <section id="records">
+                <div class="container">
+                    <div class="box">
+                        <button type="text" class="buttonR_edit">Edit</button>
+                        <button type="text" class="buttonR_delete">Delete</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer id="footer_section">
+            <p>Wellness Organizer, Copyright &copy; 2018</p>
+        </footer>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script src="client.js" type="text/javascript"></script>
+    </body>
+
+    </html>
