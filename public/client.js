@@ -66,7 +66,8 @@ $(document).on("submit", "#login", function (event) {
         }),
         success: (results) => {
             console.log(results);
-            console.log(results.userName);
+            console.log(results.firstName);
+            $(".logout-user").text(results.firstName)
             $(".nutritionUserName").val(results.userName);
             $(".workoutUserName").val(results.userName);
             $(".progressUserName").val(results.userName);
