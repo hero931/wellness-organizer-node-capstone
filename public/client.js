@@ -1,5 +1,32 @@
 /*STEP 1 define variables objects and functions*/
+function populateNutritionRecords(username) {
+    $.ajax({
+            type: 'GET',
+            url: '/nutrition/get/' + username,
+            dataType: 'json',
+            contentType: 'application/json'
+        })
+        .done(function (result) {
+            console.log(result);
+            var buildTheHtmlOutput = "";
 
+            $.each(result.nutritions, function (nutritionsArrayKey, nutritionsArrayValue) {
+                buildTheHtmlOutput += "<div class='box'>";
+                buildTheHtmlOutput += "<p>" + nutritionsArrayValue.nutritionText + "</p>";
+                buildTheHtmlOutput += "<input type='hidden' class='nutritionRecordsToEdit' value='" + nutritionsArrayValue._id + "'>";
+                buildTheHtmlOutput += "<button type='text' class='buttonR_edit'>Edit</button>";
+                buildTheHtmlOutput += "<button type='text' class='buttonR_delete'>Delete</button>";
+                buildTheHtmlOutput += "</div>";
+            });
+
+            $("#nutritionRecords").html(buildTheHtmlOutput);
+        })
+        .fail(function (jqXHR, error, errorThrown) {
+            console.log(jqXHR);
+            console.log(error);
+            console.log(errorThrown);
+        });
+}
 
 
 
@@ -90,33 +117,36 @@ $(document).on("click", ".activate-login", function (event) {
     $('header nav').hide();
 });
 
+// add a new nutrition
 $(document).on("click", ".buttonN_add", function (event) {
     event.preventDefault();
-    $('.hide-me').hide();
-    $('.records-page').show();
-    $('header nav').show();
+    let username = $('.nutritionUserName').val();
+    let nutritionTextarea = $('#nutrition textarea').val();
+    console.log(username, nutritionTextarea);
+
+    $.ajax({
+        url: '/nutrition/create',
+        type: 'POST',
+        dataType: 'json',
+        contentType: 'application/json',
+        data: JSON.stringify({
+            username: username,
+            nutritionTextarea: nutritionTextarea
+        }),
+        success: (results) => {
+            console.log(results);
+            populateNutritionRecords(username);
+            $('.hide-me').hide();
+            $('.records-page').show();
+            $('header nav').show();
+        },
+        error: (jqXHR, exception) => {
+            $('.alert').attr('area-hidden', 'false').removeClass('hidden');
+        }
+    })
 });
 
-$(document).on("click", ".buttonN_read", function (event) {
-    event.preventDefault();
-    $('.hide-me').hide();
-    $('.records-page').show();
-    $('header nav').show();
-});
 
-$(document).on("click", ".buttonN_update", function (event) {
-    event.preventDefault();
-    $('.hide-me').hide();
-    $('.records-page').show();
-    $('header nav').show();
-});
-
-$(document).on("click", ".buttonN_delete", function (event) {
-    event.preventDefault();
-    $('.hide-me').hide();
-    $('.records-page').show();
-    $('header nav').show();
-});
 
 $(document).on("click", ".buttonP_add", function (event) {
     event.preventDefault();
@@ -125,49 +155,7 @@ $(document).on("click", ".buttonP_add", function (event) {
     $('header nav').show();
 });
 
-$(document).on("click", ".buttonP_read", function (event) {
-    event.preventDefault();
-    $('.hide-me').hide();
-    $('.records-page').show();
-    $('header nav').show();
-});
-
-$(document).on("click", ".buttonP_update", function (event) {
-    event.preventDefault();
-    $('.hide-me').hide();
-    $('.records-page').show();
-    $('header nav').show();
-});
-
-$(document).on("click", ".buttonP_delete", function (event) {
-    event.preventDefault();
-    $('.hide-me').hide();
-    $('.records-page').show();
-    $('header nav').show();
-});
-
 $(document).on("click", ".buttonW_add", function (event) {
-    event.preventDefault();
-    $('.hide-me').hide();
-    $('.records-page').show();
-    $('header nav').show();
-});
-
-$(document).on("click", ".buttonW_read", function (event) {
-    event.preventDefault();
-    $('.hide-me').hide();
-    $('.records-page').show();
-    $('header nav').show();
-});
-
-$(document).on("click", ".buttonW_update", function (event) {
-    event.preventDefault();
-    $('.hide-me').hide();
-    $('.records-page').show();
-    $('header nav').show();
-});
-
-$(document).on("click", ".buttonW_delete", function (event) {
     event.preventDefault();
     $('.hide-me').hide();
     $('.records-page').show();

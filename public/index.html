@@ -98,9 +98,6 @@
                 <div class="container">
                     <h1>Nutrition</h1>
                     <button type="text" class="buttonN_add">Add</button>
-                    <button type="text" class="buttonN_read">Read</button>
-                    <button type="text" class="buttonN_update">Update</button>
-                    <button type="text" class="buttonN_delete">Delete</button>
                     <input type="hidden" class="nutritionUserName" value="">
                     <textarea>Meat – GRASS-FED*, not grain-fed. Grain causes the same problem in animals as they do in humans.
                     Fowl – Chicken, duck, hen, turkey…things with wings that (try to) fly.
@@ -118,9 +115,6 @@
                 <div class="container">
                     <h1>Workout</h1>
                     <button type="text" class="buttonW_add">Add</button>
-                    <button type="text" class="buttonW_read">Read</button>
-                    <button type="text" class="buttonW_update">Update</button>
-                    <button type="text" class="buttonW_delete">Delete</button>
                     <input type="hidden" class="workoutUserName" value="">
                     <textarea>
                     20 bodyweight squats
@@ -137,9 +131,6 @@
                 <div class="container">
                     <h1>Progress</h1>
                     <button type="text" class="buttonP_add">Add</button>
-                    <button type="text" class="buttonP_read">Read</button>
-                    <button type="text" class="buttonP_update">Update</button>
-                    <button type="text" class="buttonP_delete">Delete</button>
                     <input type="hidden" class="progressUserName" value="">
                     <textarea>Determine your goals or habits you want to establish! </textarea>
                 </div>
@@ -168,8 +159,10 @@
 
         <main class="records-page hide-me">
             <section id="records">
-                <div class="container">
+                <div class="container" id="nutritionRecords">
                     <div class="box">
+                        <p></p>
+                        <input type="hidden" class="nutritionRecordsToEdit" value="">
                         <button type="text" class="buttonR_edit">Edit</button>
                         <button type="text" class="buttonR_delete">Delete</button>
                     </div>

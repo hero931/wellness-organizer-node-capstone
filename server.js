@@ -1,5 +1,5 @@
 const User = require('./models/user');
-const Achievement = require('./models/achievement');
+const Nutrition = require('./models/nutrition');
 const bodyParser = require('body-parser');
 const config = require('./config');
 const mongoose = require('mongoose');
@@ -138,10 +138,11 @@ app.post('/users/signin', function (req, res) {
 // POST -----------------------------------------
 // creating a new achievement
 app.post('/nutrition/create', (req, res) => {
-    let nutritionText = req.body.nutritionText;
-    let user = req.body.user;
+
+    let nutritionText = req.body.nutritionTextarea;
+    let username = req.body.username;
     Nutrition.create({
-        user,
+        username,
         nutritionText,
     }, (err, item) => {
         if (err) {
@@ -150,10 +151,29 @@ app.post('/nutrition/create', (req, res) => {
             });
         }
         if (item) {
-            console.log(`Nutrition \`${achieveWhat}\` added.`);
+            console.log(`Nutrition added.`);
             return res.json(item);
         }
     });
+});
+
+app.get('/nutrition/get/:user', function (req, res) {
+    //create get request and compare if achievement === goal
+    Nutrition
+        .find({
+            username: req.params.user
+        })
+        .then(function (nutritions) {
+            res.json({
+                nutritions
+            });
+        })
+        .catch(function (err) {
+            console.error(err);
+            res.status(500).json({
+                message: 'Internal server error'
+            });
+        });
 });
 
 // PUT --------------------------------------
@@ -182,29 +202,7 @@ app.put('/achievement/:id', function (req, res) {
 
 // GET ------------------------------------
 // accessing all of a user's achievements
-app.get('/achievements/:user', function (req, res) {
-    //create get request and compare if achievement === goal
-    Achievement
-        .find()
-        .sort('achieveWhen')
-        .then(function (achievements) {
-            let achievementOutput = [];
-            achievements.map(function (achievement) {
-                if (achievement.user == req.params.user) {
-                    achievementOutput.push(achievement);
-                }
-            });
-            res.json({
-                achievementOutput
-            });
-        })
-        .catch(function (err) {
-            console.error(err);
-            res.status(500).json({
-                message: 'Internal server error'
-            });
-        });
-});
+
 
 // accessing a single achievement by id
 app.get('/achievement/:id', function (req, res) {
