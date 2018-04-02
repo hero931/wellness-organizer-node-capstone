@@ -1,5 +1,7 @@
 const User = require('./models/user');
 const Nutrition = require('./models/nutrition');
+const Workout = require('./models/workout');
+const Progress = require('./models/progress');
 const bodyParser = require('body-parser');
 const config = require('./config');
 const mongoose = require('mongoose');
@@ -99,6 +101,7 @@ app.post('/users/create', (req, res) => {
 app.post('/users/signin', function (req, res) {
     const user = req.body.username;
     const pw = req.body.password;
+    console.log(pw, user);
     User
         .findOne({
             username: req.body.userName
@@ -134,9 +137,8 @@ app.post('/users/signin', function (req, res) {
 });
 
 
-// -------------ACHIEVEMENT ENDPOINTS------------------------------------------------
 // POST -----------------------------------------
-// creating a new achievement
+// creating a new nutrition
 app.post('/nutrition/create', (req, res) => {
 
     let nutritionText = req.body.nutritionTextarea;
@@ -157,8 +159,8 @@ app.post('/nutrition/create', (req, res) => {
     });
 });
 
+//GET
 app.get('/nutrition/get/:user', function (req, res) {
-    //create get request and compare if achievement === goal
     Nutrition
         .find({
             username: req.params.user
@@ -176,52 +178,118 @@ app.get('/nutrition/get/:user', function (req, res) {
         });
 });
 
-// PUT --------------------------------------
-app.put('/achievement/:id', function (req, res) {
-    /*  let toUpdate = {};
-        let updateableFields = ['achieveMeal', 'achieveDrink', 'achieveSnack'];
-        one more put for workout*/
-    let toUpdate = {};
-    let updateableFields = ['achieveWhat', 'achieveHow', 'achieveWhen', 'achieveWhy'];
-    updateableFields.forEach(function (field) {
-        if (field in req.body) {
-            toUpdate[field] = req.body[field];
-        }
-    });
-    Achievement
-        .findByIdAndUpdate(req.params.id, {
-            $set: toUpdate
-        }).exec().then(function (achievement) {
-            return res.status(204).end();
-        }).catch(function (err) {
+//POST
+//creating a new workout
+app.post('/workout/create', (req, res) => {
+
+    let workoutText = req.body.workoutTextarea;
+    let username = req.body.username;
+    Workout.create({
+        username,
+        workoutText,
+    }, (err, item) => {
+        if (err) {
             return res.status(500).json({
                 message: 'Internal Server Error'
             });
-        });
+        }
+        if (item) {
+            console.log(`Workout added.`);
+            return res.json(item);
+        }
+    });
 });
 
-// GET ------------------------------------
-// accessing all of a user's achievements
-
-
-// accessing a single achievement by id
-app.get('/achievement/:id', function (req, res) {
-    Achievement
-        .findById(req.params.id).exec().then(function (achievement) {
-            return res.json(achievement);
+//GET
+app.get('/workout/get/:user', function (req, res) {
+    Workout
+        .find({
+            username: req.params.user
         })
-        .catch(function (achievements) {
+        .then(function (workouts) {
+            res.json({
+                workouts
+            });
+        })
+        .catch(function (err) {
             console.error(err);
             res.status(500).json({
-                message: 'Internal Server Error'
+                message: 'Internal server error'
             });
         });
 });
 
+//POST
+//creating a new progress
+app.post('/progress/create', (req, res) => {
+
+    let progressText = req.body.progressTextarea;
+    let username = req.body.username;
+    Progress.create({
+        username,
+        progressText,
+    }, (err, item) => {
+        if (err) {
+            return res.status(500).json({
+                message: 'Internal Server Error'
+            });
+        }
+        if (item) {
+            console.log(`Progress added.`);
+            return res.json(item);
+        }
+    });
+});
+
+//GET
+app.get('/progress/get/:user', function (req, res) {
+    Progress
+        .find({
+            username: req.params.user
+        })
+        .then(function (progresses) {
+            res.json({
+                progresses
+            });
+        })
+        .catch(function (err) {
+            console.error(err);
+            res.status(500).json({
+                message: 'Internal server error'
+            });
+        });
+    a
+});
+
+
 // DELETE ----------------------------------------
-// deleting an achievement by id
-app.delete('/achievement/:id', function (req, res) {
-    Achievement.findByIdAndRemove(req.params.id).exec().then(function (achievement) {
+// deleting a nutrition by id
+app.delete('/nutrition/:id', function (req, res) {
+    Nutrition.findByIdAndRemove(req.params.id).exec().then(function (nutrition) {
+        return res.status(204).end();
+    }).catch(function (err) {
+        return res.status(500).json({
+            message: 'Internal Server Error'
+        });
+    });
+});
+
+// DELETE ----------------------------------------
+// deleting a workout by id
+app.delete('/workout/:id', function (req, res) {
+    Workout.findByIdAndRemove(req.params.id).exec().then(function (workout) {
+        return res.status(204).end();
+    }).catch(function (err) {
+        return res.status(500).json({
+            message: 'Internal Server Error'
+        });
+    });
+});
+
+// DELETE ----------------------------------------
+// deleting a progress by id
+app.delete('/progress/:id', function (req, res) {
+    Progress.findByIdAndRemove(req.params.id).exec().then(function (progress) {
         return res.status(204).end();
     }).catch(function (err) {
         return res.status(500).json({
