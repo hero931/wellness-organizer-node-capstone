@@ -4,11 +4,29 @@ Wellness Organizer is an interactive full-stack web app that helps users build t
 
 ## Screenshots
 
-##Landing Page
+
+LANDING PAGE:
+
 ![image](https://user-images.githubusercontent.com/31460531/38280706-d5a39ae2-3774-11e8-8030-2b9e7ad23342.png)
+
+
+LOGIN PAGE:
+
 ![image](https://user-images.githubusercontent.com/31460531/38280734-f704b2f2-3774-11e8-9526-82c7f7b414c5.png)
+
+
+DASHBOARD PAGE:
+
 ![image](https://user-images.githubusercontent.com/31460531/38280745-08d9dbe2-3775-11e8-9319-0933a50d1542.png)
+
+
+CHAMPION PAGE: 
+
 ![image](https://user-images.githubusercontent.com/31460531/38280777-2c88c7e2-3775-11e8-88bc-08862931e7d9.png)
+
+
+RESULTS PAGE:
+
 ![image](https://user-images.githubusercontent.com/31460531/38280797-4171435a-3775-11e8-89c1-08a93ac6f53c.png)
 
 ## Use Case
