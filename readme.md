@@ -40,7 +40,7 @@ AS A VISITOR, NOT LOGGED IN
 * As a visitor, I want to create a new account so that I can use the app.
 (LANDING PAGE--wireframe will have title, logo, a few details about logging in and what the app is about)
 
-![image](https://user-images.githubusercontent.com/31460531/38281013-7f4f3bcc-3776-11e8-9232-81b5219ff87a.png)
+![image](https://user-images.githubusercontent.com/31460531/38281464-b9378a54-3778-11e8-86cd-483168b65aa6.png)
 
 * As a visitor, I want to be able to read about how the app works so that I can decide if I want to sign up for an account.
 
