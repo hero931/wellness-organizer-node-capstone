@@ -39,7 +39,8 @@ AS A VISITOR, NOT LOGGED IN
 * As an initial visitor I want to land and see what the page is about so I can understand what the app does and decide whether or not to create an account to be able to use the app.
 * As a visitor, I want to create a new account so that I can use the app.
 (LANDING PAGE--wireframe will have title, logo, a few details about logging in and what the app is about)
-![UI Flow handwritten draft](https://github.com/Marjona6/not-just-luck-thinkful-full-stack-capstone/blob/master/public/img/wf00.jpg)
+
+![image](https://user-images.githubusercontent.com/31460531/38281013-7f4f3bcc-3776-11e8-9232-81b5219ff87a.png)
 
 * As a visitor, I want to be able to read about how the app works so that I can decide if I want to sign up for an account.
 
@@ -48,16 +49,18 @@ AS A VISITOR, NOT LOGGED IN
 AS A LOGGED-IN USER
 
 * As a user, I want to be able to use or manipulate with the information about nutrition, workout, progress and notes.
-![UI Flow handwritten draft](https://github.com/Marjona6/not-just-luck-thinkful-full-stack-capstone/blob/master/public/img/wf04.jpg)
 
-* As a user, I want to view the "Champion" examples page.
+![image](https://user-images.githubusercontent.com/31460531/38281240-a68605e4-3777-11e8-8c0b-5c44578710a6.png)
 
-* As a user, I want to be able to see the records page.
+* As a user, I want to view an example of workout "Champion" page.
 
+![image](https://user-images.githubusercontent.com/31460531/38281288-e2ca84f8-3777-11e8-8ff1-7b4293c73c13.png)
+
+* As a user, I want to be able to see the records of my workout and nutrition page.
 * As a user, I want to be able to edit or delete information about my records.
-![UI Flow handwritten draft](https://github.com/Marjona6/not-just-luck-thinkful-full-stack-capstone/blob/master/public/img/wf01.jpg)
-![UI Flow handwritten draft](https://github.com/Marjona6/not-just-luck-thinkful-full-stack-capstone/blob/master/public/img/wf02.jpg)
-![UI Flow handwritten draft](https://github.com/Marjona6/not-just-luck-thinkful-full-stack-capstone/blob/master/public/img/wf03.jpg)
+
+![image](https://user-images.githubusercontent.com/31460531/38281326-1cc04b0c-3778-11e8-9765-ea87db7e0d6c.png)
+
 
 ## Working Prototype
 Find a working prototype with Node at https://wellness-organizer.herokuapp.com/ .
