@@ -3,11 +3,11 @@
 Wellness Organizer is an interactive full-stack web app that helps users build their own wellness program that includes combination of nutrition and workout exercises by guiding them through the principle of consistent progress.
 
 ## Screenshots
-![Landing page screen shot](https://github.com/Marjona6/not-just-luck-thinkful-full-stack-capstone/blob/master/public/img/njl01.png)
-![Account setup screen shot](https://github.com/Marjona6/not-just-luck-thinkful-full-stack-capstone/blob/master/public/img/njl02.png)
-![User homepage screen shot](https://github.com/Marjona6/not-just-luck-thinkful-full-stack-capstone/blob/master/public/img/njl03.png)
-![Achievement timeline screen shot](https://github.com/Marjona6/not-just-luck-thinkful-full-stack-capstone/blob/master/public/img/njl04.png)
-![Skills word cloud screen shot](https://github.com/Marjona6/not-just-luck-thinkful-full-stack-capstone/blob/master/public/img/njl05.png)
+![image](https://user-images.githubusercontent.com/31460531/38280706-d5a39ae2-3774-11e8-8030-2b9e7ad23342.png)
+![image](https://user-images.githubusercontent.com/31460531/38280734-f704b2f2-3774-11e8-9526-82c7f7b414c5.png)
+![image](https://user-images.githubusercontent.com/31460531/38280745-08d9dbe2-3775-11e8-9319-0933a50d1542.png)
+![image](https://user-images.githubusercontent.com/31460531/38280777-2c88c7e2-3775-11e8-88bc-08862931e7d9.png)
+![image](https://user-images.githubusercontent.com/31460531/38280797-4171435a-3775-11e8-89c1-08a93ac6f53c.png)
 
 ## Use Case
 Wellness Organizer is for anyone who would like to try a new approach of managing his/her healthy lifestyle. This app will help you pick SMART goals which are - specific, measurable, achievable, relevant and timely!
