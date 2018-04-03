@@ -50,16 +50,16 @@ AS A LOGGED-IN USER
 
 * As a user, I want to be able to use or manipulate with the information about nutrition, workout, progress and notes.
 
-![image](https://user-images.githubusercontent.com/31460531/38281240-a68605e4-3777-11e8-8c0b-5c44578710a6.png)
+![image](https://user-images.githubusercontent.com/31460531/38281511-da1a1a70-3778-11e8-8649-41b018881a1f.png)
 
 * As a user, I want to view an example of workout "Champion" page.
 
-![image](https://user-images.githubusercontent.com/31460531/38281288-e2ca84f8-3777-11e8-8ff1-7b4293c73c13.png)
+![image](https://user-images.githubusercontent.com/31460531/38281544-002a7b42-3779-11e8-95cf-d60b55b107b2.png)
 
 * As a user, I want to be able to see the records of my workout and nutrition page.
 * As a user, I want to be able to edit or delete information about my records.
 
-![image](https://user-images.githubusercontent.com/31460531/38281326-1cc04b0c-3778-11e8-9765-ea87db7e0d6c.png)
+![image](https://user-images.githubusercontent.com/31460531/38281559-1dae963a-3779-11e8-985d-ae2083112d30.png)
 
 
 ## Working Prototype
