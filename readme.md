@@ -3,6 +3,8 @@
 Wellness Organizer is an interactive full-stack web app that helps users build their own wellness program that includes combination of nutrition and workout exercises by guiding them through the principle of consistent progress.
 
 ## Screenshots
+
+##Landing Page
 ![image](https://user-images.githubusercontent.com/31460531/38280706-d5a39ae2-3774-11e8-8030-2b9e7ad23342.png)
 ![image](https://user-images.githubusercontent.com/31460531/38280734-f704b2f2-3774-11e8-9526-82c7f7b414c5.png)
 ![image](https://user-images.githubusercontent.com/31460531/38280745-08d9dbe2-3775-11e8-9319-0933a50d1542.png)
