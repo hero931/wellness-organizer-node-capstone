@@ -137,7 +137,7 @@ app.post('/users/signin', function (req, res) {
 });
 
 
-// POST -----------------------------------------
+// POST
 // creating a new nutrition
 app.post('/nutrition/create', (req, res) => {
 
@@ -219,8 +219,8 @@ app.get('/workout/get/:user', function (req, res) {
         });
 });
 
-//POST
-//creating a new progress
+// POST
+// creating a new progress
 app.post('/progress/create', (req, res) => {
 
     let progressText = req.body.progressTextarea;
@@ -258,7 +258,6 @@ app.get('/progress/get/:user', function (req, res) {
                 message: 'Internal server error'
             });
         });
-    a
 });
 
 
@@ -297,6 +296,8 @@ app.delete('/progress/:id', function (req, res) {
         });
     });
 });
+
+
 
 // MISC ------------------------------------------
 // catch-all endpoint if client makes request to non-existent endpoint

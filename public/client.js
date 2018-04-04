@@ -52,6 +52,11 @@ $(document).on("submit", "#login", function (event) {
     let username = $('input[id="username"]').val();
     let password = $('input[id="password"]').val();
     console.log(username, password);
+    /* if ((!username) || (username.length < 1) || (username.indexOf(' ') > 0)) {
+            alert('Invalid username');
+        }
+        else if ((!password) || (password.length < 1) || (password.indexOf(' ') > 0)) {
+            alert('Invalid password');*/
     $.ajax({
         url: '/users/signin',
         type: 'POST',
@@ -195,22 +200,24 @@ function populateWorkoutRecords(username) {
         });
 }
 
-//add a new progress
+// add a new progress
 $(document).on("click", ".buttonP_add", function (event) {
     event.preventDefault();
     let username = $('.progressUserName').val();
     let progressTextarea = $('#progress textarea').val();
+    console.log(username, progressTextarea);
+
     $.ajax({
         url: '/progress/create',
         type: 'POST',
-        dataType: 'JSON',
+        dataType: 'json',
         contentType: 'application/json',
         data: JSON.stringify({
             username: username,
             progressTextarea: progressTextarea
         }),
-        success: (result) => {
-            console.log(result);
+        success: (results) => {
+            console.log(results);
             populateProgressRecords(username);
             $('.hide-me').hide();
             $('.records-page').show();
@@ -282,6 +289,10 @@ $(document).on("click", "#home", function (event) {
 
 $(document).on("click", "#rec", function (event) {
     event.preventDefault();
+    let username = $('.nutritionUserName').val();
+    populateProgressRecords(username);
+    populateWorkoutRecords(username);
+    populateNutritionRecords(username);
     $('.hide-me').hide();
     $('.records-page').show();
     $('header nav').show();
@@ -318,93 +329,50 @@ $(document).on('click', '.buttonN_delete', function (event) {
     }
 });
 
-/*function deleteData(item, url) {
-    return fetch('/nutrition' + '/' + nutritionId, {
-            method: 'delete'
-        })
-        .then(response => response.json());
-};*/
-
-/*
 //Delete a workout record
-$('.buttonW_delete').on('click', function (event) {
+$(document).on('click', '.buttonW_delete', function (event) {
     event.preventDefault();
-    let workoutd = "";
+    let username = $('.workoutUserName').val();
+    let workoutId = $('.workoutRecordsToEdit').val();
+    console.log(workoutId);
     if (confirm('Are you sure you want to delete your workout record?') === true) {
         $.ajax({
-            method: 'DELETE',
-            url: '/workout/' + workoutId,
-            //            success: deleteData
-        });
+                method: 'DELETE',
+                url: '/workout/' + workoutId
+            })
+            .done(function (result) {
+                console.log(result);
+                populateWorkoutRecords(username);
+            })
+            .fail(function (jqXHR, error, errorThrown) {
+                console.log(jqXHR);
+                console.log(error);
+                console.log(errorThrown);
+            });
+
     }
 });
 
 //Delete a progress record
-$('.buttonP_delete').on('click', function (event) {
+$(document).on('click', '.buttonP_delete', function (event) {
     event.preventDefault();
-    let progressId = "";
+    let username = $('.progressUserName').val();
+    let progressId = $('.progressRecordsToEdit').val();
+    console.log(progressId);
     if (confirm('Are you sure you want to delete your progress record?') === true) {
         $.ajax({
-            method: 'DELETE',
-            url: '/workout/' + progressId,
-            //            success: deleteData
-        });
-    }
-});*/
-
-//Update a nutrition record
-$(document).on('click', '.buttonN_edit', function (event) {
-    event.preventDefault();
-    let username = $('.nutritionUserName').val();
-    let nutritionTextarea = $('#nutrition textarea').val();
-    $.ajax({
-        url: '/nutrition/update',
-        type: 'POST',
-        dataType: 'JSON',
-        contentType: 'application/json',
-        data: JSON.stringify({
-            username: username,
-            nutritionTextarea: nutritionTextarea
-        }),
-        success: (result) => {
-            console.log(result);
-            populateNutritionUpdates(username);
-            $('.hide-me').hide();
-            $('.records-page').show();
-            $('header nav').show();
-        },
-        error: (jqXHR, exception) => {
-            $('.alert').attr('area-hidden', 'false').removeClass('hidden');
-        }
-    })
-});
-
-//Populate a nutrition updated record
-function populateNutritionUpdates(username) {
-    $.ajax({
-            type: 'GET',
-            url: '/nutrition/get/' + username,
-            dataType: 'json',
-            contentType: 'application/json'
-        })
-        .done(function (result) {
-            console.log(result);
-            var buildTheHtmlOutput = "";
-
-            $.each(result.nutritions, function (nutritionsArrayKey, nutritionsArrayValue) {
-                buildTheHtmlOutput += "<div class='box'>";
-                buildTheHtmlOutput += "<p>" + nutritionsArrayValue.nutritionText + "</p>";
-                buildTheHtmlOutput += "<input type='hidden' class='nutritionRecordsToEdit' value='" + nutritionsArrayValue._id + "'>";
-                buildTheHtmlOutput += "<button type='text' class='buttonN_edit'>Edit</button>";
-                buildTheHtmlOutput += "<button type='text' class='buttonN_delete'>Delete</button>";
-                buildTheHtmlOutput += "</div>";
+                method: 'DELETE',
+                url: '/progress/' + progressId
+            })
+            .done(function (result) {
+                console.log(result);
+                populateProgressRecords(username);
+            })
+            .fail(function (jqXHR, error, errorThrown) {
+                console.log(jqXHR);
+                console.log(error);
+                console.log(errorThrown);
             });
 
-            $("#nutritionRecords").html(buildTheHtmlOutput);
-        })
-        .fail(function (jqXHR, error, errorThrown) {
-            console.log(jqXHR);
-            console.log(error);
-            console.log(errorThrown);
-        });
-}
+    }
+});
