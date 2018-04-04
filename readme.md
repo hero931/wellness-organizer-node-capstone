@@ -3,11 +3,31 @@
 Wellness Organizer is an interactive full-stack web app that helps users build their own wellness program that includes combination of nutrition and workout exercises by guiding them through the principle of consistent progress.
 
 ## Screenshots
-![Landing page screen shot](https://github.com/Marjona6/not-just-luck-thinkful-full-stack-capstone/blob/master/public/img/njl01.png)
-![Account setup screen shot](https://github.com/Marjona6/not-just-luck-thinkful-full-stack-capstone/blob/master/public/img/njl02.png)
-![User homepage screen shot](https://github.com/Marjona6/not-just-luck-thinkful-full-stack-capstone/blob/master/public/img/njl03.png)
-![Achievement timeline screen shot](https://github.com/Marjona6/not-just-luck-thinkful-full-stack-capstone/blob/master/public/img/njl04.png)
-![Skills word cloud screen shot](https://github.com/Marjona6/not-just-luck-thinkful-full-stack-capstone/blob/master/public/img/njl05.png)
+
+
+LANDING PAGE:
+
+![image](https://user-images.githubusercontent.com/31460531/38280706-d5a39ae2-3774-11e8-8030-2b9e7ad23342.png)
+
+
+LOGIN PAGE:
+
+![image](https://user-images.githubusercontent.com/31460531/38280734-f704b2f2-3774-11e8-9526-82c7f7b414c5.png)
+
+
+DASHBOARD PAGE:
+
+![image](https://user-images.githubusercontent.com/31460531/38280745-08d9dbe2-3775-11e8-9319-0933a50d1542.png)
+
+
+CHAMPION PAGE: 
+
+![image](https://user-images.githubusercontent.com/31460531/38280777-2c88c7e2-3775-11e8-88bc-08862931e7d9.png)
+
+
+RESULTS PAGE:
+
+![image](https://user-images.githubusercontent.com/31460531/38280797-4171435a-3775-11e8-89c1-08a93ac6f53c.png)
 
 ## Use Case
 Wellness Organizer is for anyone who would like to try a new approach of managing his/her healthy lifestyle. This app will help you pick SMART goals which are - specific, measurable, achievable, relevant and timely!
@@ -19,7 +39,8 @@ AS A VISITOR, NOT LOGGED IN
 * As an initial visitor I want to land and see what the page is about so I can understand what the app does and decide whether or not to create an account to be able to use the app.
 * As a visitor, I want to create a new account so that I can use the app.
 (LANDING PAGE--wireframe will have title, logo, a few details about logging in and what the app is about)
-![UI Flow handwritten draft](https://github.com/Marjona6/not-just-luck-thinkful-full-stack-capstone/blob/master/public/img/wf00.jpg)
+
+![image](https://user-images.githubusercontent.com/31460531/38281464-b9378a54-3778-11e8-86cd-483168b65aa6.png)
 
 * As a visitor, I want to be able to read about how the app works so that I can decide if I want to sign up for an account.
 
@@ -28,16 +49,18 @@ AS A VISITOR, NOT LOGGED IN
 AS A LOGGED-IN USER
 
 * As a user, I want to be able to use or manipulate with the information about nutrition, workout, progress and notes.
-![UI Flow handwritten draft](https://github.com/Marjona6/not-just-luck-thinkful-full-stack-capstone/blob/master/public/img/wf04.jpg)
 
-* As a user, I want to view the "Champion" examples page.
+![image](https://user-images.githubusercontent.com/31460531/38281511-da1a1a70-3778-11e8-8649-41b018881a1f.png)
 
-* As a user, I want to be able to see the records page.
+* As a user, I want to view an example of workout "Champion" page.
 
+![image](https://user-images.githubusercontent.com/31460531/38281544-002a7b42-3779-11e8-95cf-d60b55b107b2.png)
+
+* As a user, I want to be able to see the records of my workout and nutrition page.
 * As a user, I want to be able to edit or delete information about my records.
-![UI Flow handwritten draft](https://github.com/Marjona6/not-just-luck-thinkful-full-stack-capstone/blob/master/public/img/wf01.jpg)
-![UI Flow handwritten draft](https://github.com/Marjona6/not-just-luck-thinkful-full-stack-capstone/blob/master/public/img/wf02.jpg)
-![UI Flow handwritten draft](https://github.com/Marjona6/not-just-luck-thinkful-full-stack-capstone/blob/master/public/img/wf03.jpg)
+
+![image](https://user-images.githubusercontent.com/31460531/38281559-1dae963a-3779-11e8-985d-ae2083112d30.png)
+
 
 ## Working Prototype
 Find a working prototype with Node at https://wellness-organizer.herokuapp.com/ .
