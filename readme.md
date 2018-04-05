@@ -36,13 +36,14 @@ Wellness Organizer is for anyone who would like to try a new approach of managin
 
 AS A VISITOR, NOT LOGGED IN
 
-* As an initial visitor I want to land and see what the page is about so I can understand what the app does and decide whether or not to create an account to be able to use the app.
+* As an initial visitor I want to land and see what the app is about so I can understand what the app does.
+
 * As a visitor, I want to create a new account so that I can use the app.
-(LANDING PAGE--wireframe will have title, logo, a few details about logging in and what the app is about)
+(LANDING PAGE--wireframe will have title, details about logging in and what the app is about)
 
 ![image](https://user-images.githubusercontent.com/31460531/38281464-b9378a54-3778-11e8-86cd-483168b65aa6.png)
 
-* As a visitor, I want to be able to read about how the app works so that I can decide if I want to sign up for an account.
+* As a visitor, I want to be able to create an account.
 
 * As a visitor who has already created an account, I want to log in so that I can access my account.
 
@@ -57,25 +58,23 @@ AS A LOGGED-IN USER
 ![image](https://user-images.githubusercontent.com/31460531/38281544-002a7b42-3779-11e8-95cf-d60b55b107b2.png)
 
 * As a user, I want to be able to see the records of my workout and nutrition page.
-* As a user, I want to be able to edit or delete information about my records.
+* As a user, I want to be able to delete information about my records.
 
 ![image](https://user-images.githubusercontent.com/31460531/38281559-1dae963a-3779-11e8-985d-ae2083112d30.png)
 
 
 ## Working Prototype
-Find a working prototype with Node at https://wellness-organizer.herokuapp.com/ .
+Find a working prototype with Node at https://github.com/hero931/wellness-organizer-node-capstone .
 
 ## Functionality
-When set up an account, user will be taken to introduction page, where will be introduced to the wellness program and what are benefits of using it. User can choose either start with "Champion" examples page or right away get to the dashboard. On dashboard page user will be given prepack basic program which can be modified completely by user at any time for personal purposes. User will be able to submit the program on dashboard page and then see it on records page. At any time user be able to edit or delete the records information.
-
-## Technical
-
+When set up an account, user will be taken to Dashboard page, where will be given an option to add wellness program (nutrition, workout, progress). In addition, Dashboard page will provide with optional basic examples of nutrition and workout for user. Champion page will provide with workout examples at different levels that user can have at his/her workout program. Information that user added to his/her program will be shown at Records page as separate nutrition, workout, progress sections.
 
 ### Front End
 * HTML5
 * CSS3
 * JavaScript
 * jQuery
+
 ### Back End
 * Node.js
 * Express.js
@@ -87,21 +86,22 @@ When set up an account, user will be taken to introduction page, where will be i
 ### Responsive
 * The app is responsive and optimized for both desktop and mobile viewing and use.
 
-### Security
-* User passwords are encrypted using bcrypt.js
-
 ## API Documentation
 API endpoints for the back end include:
 * POST to '/users/create' for creating a new user
-* POST to '/signin' to sign in an existing user
-* POST to '/new/create' to add an achievement to a user's list of accomplishments
-* PUT to '/achievement/:id' to update an existing achievement
-* GET to '/achievements/:user' to access all of a user's existing achievements
-* GET to '/achievement/:id' to access a single achievement by ID
-* DELETE to '/achievement/:id' to delete a single achievement by ID
+* POST to '/users/signin' to sign in an existing user
+* POST to '/nutrition/create' to add a new nutrition information
+* POST to '/progress/create' to add a new progress information
+* POST to '/workout/create' to add a new workout information
+* GET to '/nutrition/get/:user' to get info about user
+* GET to '/workout/get/:user' to get info about user
+* GET to '/progress/get/:user' to get info about user
+* DELETE to '/nutrition/:id' to delete a nutrition by ID
+* DELETE to '/workout/:id' to delete a workout by ID
+* DELETE to '/progress/:id' to delete a progress by ID
 
 ## Development Roadmap
 Planned additional features and improvements will allow users to:
-* Have an option to invite friends and compete with them for better results
-* Update email address
-* Build a program for team to follow the program
+* Have an option to see the dates and time for previous records
+* Have a blog page where users can share their experience
+
