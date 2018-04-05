@@ -28,18 +28,12 @@ $(document).on("submit", "#signup_form", function (event) {
         success: (data) => {
             console.log(data);
             if (data) {
-                $('#signup_section').prepend(
-                    `<div class='signup_success'><span style='vertical-align: middle;'>Good job! You have successfully signed up! Now you can login!<span></div>`
-                );
-                //                $('.hide-me').hide();
-                //                $('.dashboard-page').show();
-                //                $('header nav').show();
+                alert('Good job! You have successfully signed up! Now you can login!.');
             }
         },
         error: () => {
-            $('#signup_section').prepend(
-                `<div class='signup_fail'><span>Please check again! This email has already been used for signup. </span></div>`
-            );
+            alert('Please check again! This email has already been used for signup.');
+
         }
     })
 
@@ -52,35 +46,42 @@ $(document).on("submit", "#login", function (event) {
     let username = $('input[id="username"]').val();
     let password = $('input[id="password"]').val();
     console.log(username, password);
-    /* if ((!username) || (username.length < 1) || (username.indexOf(' ') > 0)) {
-            alert('Invalid username');
-        }
-        else if ((!password) || (password.length < 1) || (password.indexOf(' ') > 0)) {
-            alert('Invalid password');*/
-    $.ajax({
-        url: '/users/signin',
-        type: 'POST',
-        dataType: 'json',
-        contentType: 'application/json',
-        data: JSON.stringify({
-            username: username,
-            password: password
-        }),
-        success: (results) => {
-            console.log(results);
-            console.log(results.firstName);
-            $(".logout-user").text(results.firstName)
-            $(".nutritionUserName").val(results.userName);
-            $(".workoutUserName").val(results.userName);
-            $(".progressUserName").val(results.userName);
-            $('.hide-me').hide();
-            $('.dashboard-page').show();
-            $('header nav').show();
-        },
-        error: (jqXHR, exception) => {
-            $('.alert').attr('area-hidden', 'false').removeClass('hidden');
-        }
-    })
+    if ((!username) || (username.length < 1) || (username.indexOf(' ') > 0)) {
+
+        alert('Invalid username');
+        console.log('invalid username');
+        //            alert('Invalid username');
+    } else if ((!password) || (password.length < 1) || (password.indexOf(' ') > 0)) {
+        alert('Invalid password');
+        //            alert('Invalid password');
+        console.log('invalid password');
+    } else {
+
+        $.ajax({
+            url: '/users/signin',
+            type: 'POST',
+            dataType: 'json',
+            contentType: 'application/json',
+            data: JSON.stringify({
+                username: username,
+                password: password
+            }),
+            success: (results) => {
+                console.log(results);
+                console.log(results.firstName);
+                $(".logout-user").text(results.firstName)
+                $(".nutritionUserName").val(results.userName);
+                $(".workoutUserName").val(results.userName);
+                $(".progressUserName").val(results.userName);
+                $('.hide-me').hide();
+                $('.dashboard-page').show();
+                $('header nav').show();
+            },
+            error: (jqXHR, exception) => {
+                alert('Invalid username or password');
+            }
+        })
+    }
 });
 
 // add a new nutrition
@@ -128,7 +129,6 @@ function populateNutritionRecords(username) {
                 buildTheHtmlOutput += "<div class='box'>";
                 buildTheHtmlOutput += "<p>" + nutritionsArrayValue.nutritionText + "</p>";
                 buildTheHtmlOutput += "<input type='hidden' class='nutritionRecordsToEdit' value='" + nutritionsArrayValue._id + "'>";
-                buildTheHtmlOutput += "<button type='text' class='buttonN_edit'>Edit</button>";
                 buildTheHtmlOutput += "<button type='text' class='buttonN_delete'>Delete</button>";
                 buildTheHtmlOutput += "</div>";
             });
@@ -186,7 +186,6 @@ function populateWorkoutRecords(username) {
                 buildTheHtmlOutput += "<div class='box'>";
                 buildTheHtmlOutput += "<p>" + workoutsArrayValue.workoutText + "</p>";
                 buildTheHtmlOutput += "<input type='hidden' class='workoutRecordsToEdit' value='" + workoutsArrayValue._id + "'>";
-                buildTheHtmlOutput += "<button type='text' class='buttonW_edit'>Edit</button>";
                 buildTheHtmlOutput += "<button type='text' class='buttonW_delete'>Delete</button>";
                 buildTheHtmlOutput += "</div>";
             });
@@ -245,7 +244,6 @@ function populateProgressRecords(username) {
                 buildTheHtmlOutput += "<div class='box'>";
                 buildTheHtmlOutput += "<p>" + progressesArrayValue.progressText + "</p>";
                 buildTheHtmlOutput += "<input type='hidden' class='progressRecordsToEdit' value='" + progressesArrayValue._id + "'>";
-                buildTheHtmlOutput += "<button type='text' class='buttonP_edit'>Edit</button>";
                 buildTheHtmlOutput += "<button type='text' class='buttonP_delete'>Delete</button>";
                 buildTheHtmlOutput += "</div>";
             });
