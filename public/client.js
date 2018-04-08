@@ -28,12 +28,11 @@ $(document).on("submit", "#signup_form", function (event) {
         success: (data) => {
             console.log(data);
             if (data) {
-                alert('Good job! You have successfully signed up! Now you can login!.');
+                $('.signup_success').show();
             }
         },
         error: () => {
-            alert('Please check again! This email has already been used for signup.');
-
+            $('.signup_fail').show();
         }
     })
 
@@ -47,7 +46,6 @@ $(document).on("submit", "#login", function (event) {
     let password = $('input[id="password"]').val();
     console.log(username, password);
     if ((!username) || (username.length < 1) || (username.indexOf(' ') > 0)) {
-
         alert('Invalid username');
         console.log('invalid username');
         //            alert('Invalid username');
@@ -56,7 +54,6 @@ $(document).on("submit", "#login", function (event) {
         //            alert('Invalid password');
         console.log('invalid password');
     } else {
-
         $.ajax({
             url: '/users/signin',
             type: 'POST',
@@ -78,7 +75,7 @@ $(document).on("submit", "#login", function (event) {
                 $('header nav').show();
             },
             error: (jqXHR, exception) => {
-                alert('Invalid username or password');
+                $('.wrong_login').show();
             }
         })
     }

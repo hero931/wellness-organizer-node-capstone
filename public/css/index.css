@@ -126,8 +126,20 @@ ul li a .logout-user {
     font-size: 18px;
 }
 
-.signup_success span {
+.signup_success {
     color: #e8491d;
+    font-size: 16px;
+}
+
+.signup_fail {
+    color: #e8491d;
+    font-size: 16px;
+}
+
+.wrong_login {
+    color: #e8491d;
+    font-size: 18px;
+    margin-top: 2%;
 }
 
 #nutrition,

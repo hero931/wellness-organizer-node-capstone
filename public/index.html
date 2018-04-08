@@ -59,6 +59,8 @@
             </section>
             <section id="signup_section">
                 <form name="sign_up_form" id="signup_form">
+                    <div class="signup_success hide-me">Good job! You have successfully signed up! Now you can login!</div>
+                    <div class="signup_fail hide-me">Please check again! This email has already been used for signup.</div>
                     <input type="text" placeholder="First Name" value="userName" id="firstName" class="input" required>
                     <input type="email" placeholder="Enter Email" value="demo@email.com" id="username" class="input username_input" required>
                     <input type="password" placeholder="Enter Password" value="demouser" id="password" class="input password_input " required>
@@ -74,7 +76,7 @@
                 <div class="container">
                     <form id="login_form">
                         <div class="box">
-                            <!--<div class="alert hidden" aria-hidden="true"><p> You have entered an incorrect username or password. </p></div>-->
+                            <div class="wrong_login hide-me">Invalid username or password</div>
                             <legend>Login</legend>
                             <label for="email">Email Address </label>
                             <br>
