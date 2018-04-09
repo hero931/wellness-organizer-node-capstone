@@ -1,4 +1,119 @@
 /*STEP 1 define variables objects and functions*/
+
+//Populate a progress text
+function populateProgressRecords(username) {
+    $.ajax({
+            type: 'GET',
+            url: '/progress/get/' + username,
+            dataType: 'json',
+            contentType: 'application/json'
+        })
+        .done(function (result) {
+            console.log(result);
+            var buildTheHtmlOutput = "";
+
+            //if there are records send them to the html
+            if (result.progresses.length != 0) {
+
+                $.each(result.progresses, function (progressesArrayKey, progressesArrayValue) {
+                    buildTheHtmlOutput += "<div class='box'>";
+                    buildTheHtmlOutput += "<p>" + progressesArrayValue.progressText + "</p>";
+                    buildTheHtmlOutput += "<input type='hidden' class='progressRecordsToEdit' value='" + progressesArrayValue._id + "'>";
+                    buildTheHtmlOutput += "<button type='text' class='buttonP_delete'>Delete</button>";
+                    buildTheHtmlOutput += "</div>";
+                });
+            }
+            // if the are no records show a friendly error
+            else {
+                buildTheHtmlOutput += "<div class='box'>No progresses found</div>";
+            }
+
+
+            $("#progressRecords").html(buildTheHtmlOutput);
+        })
+        .fail(function (jqXHR, error, errorThrown) {
+            console.log(jqXHR);
+            console.log(error);
+            console.log(errorThrown);
+        });
+}
+
+
+//Populate a nutrition text
+function populateNutritionRecords(username) {
+    $.ajax({
+            type: 'GET',
+            url: '/nutrition/get/' + username,
+            dataType: 'json',
+            contentType: 'application/json'
+        })
+        .done(function (result) {
+            console.log(result);
+            var buildTheHtmlOutput = "";
+
+            //if there are records send them to the html
+            if (result.nutritions.length != 0) {
+
+                $.each(result.nutritions, function (nutritionsArrayKey, nutritionsArrayValue) {
+                    buildTheHtmlOutput += "<div class='box'>";
+                    buildTheHtmlOutput += "<p>" + nutritionsArrayValue.nutritionText + "</p>";
+                    buildTheHtmlOutput += "<input type='hidden' class='nutritionRecordsToEdit' value='" + nutritionsArrayValue._id + "'>";
+                    buildTheHtmlOutput += "<button type='text' class='buttonN_delete'>Delete</button>";
+                    buildTheHtmlOutput += "</div>";
+                });
+            }
+            // if the are no records show a friendly error
+            else {
+                buildTheHtmlOutput += "<div class='box'>No nutritions found</div>";
+            }
+
+            $("#nutritionRecords").html(buildTheHtmlOutput);
+        })
+        .fail(function (jqXHR, error, errorThrown) {
+            console.log(jqXHR);
+            console.log(error);
+            console.log(errorThrown);
+        });
+}
+
+
+//Populate a workout text
+function populateWorkoutRecords(username) {
+
+    $.ajax({
+            type: 'GET',
+            url: '/workout/get/' + username,
+            dataType: 'json',
+            contentType: 'application/json'
+        })
+        .done(function (result) {
+            console.log(result);
+            var buildTheHtmlOutput = "";
+
+            //if there are records send them to the html
+            if (result.workouts.length != 0) {
+                $.each(result.workouts, function (workoutsArrayKey, workoutsArrayValue) {
+                    buildTheHtmlOutput += "<div class='box'>";
+                    buildTheHtmlOutput += "<p>" + workoutsArrayValue.workoutText + "</p>";
+                    buildTheHtmlOutput += "<input type='hidden' class='workoutRecordsToEdit' value='" + workoutsArrayValue._id + "'>";
+                    buildTheHtmlOutput += "<button type='text' class='buttonW_delete'>Delete</button>";
+                    buildTheHtmlOutput += "</div>";
+                });
+            }
+            // if the are no records show a friendly error
+            else {
+                buildTheHtmlOutput += "<div class='box'>No workouts found</div>";
+            }
+
+            $("#workoutRecords").html(buildTheHtmlOutput);
+        })
+        .fail(function (jqXHR, error, errorThrown) {
+            console.log(jqXHR);
+            console.log(error);
+            console.log(errorThrown);
+        });
+}
+
 /*STEP 2 use variables objects and functions (triggers)*/
 
 $(document).ready(function () {
@@ -42,8 +157,8 @@ $(document).on("submit", "#signup_form", function (event) {
 
 $(document).on("submit", "#login", function (event) {
     event.preventDefault();
-    let username = $('input[id="username"]').val();
-    let password = $('input[id="password"]').val();
+    let username = $('input[id="loginUsername"]').val();
+    let password = $('input[id="loginPassword"]').val();
     console.log(username, password);
     if ((!username) || (username.length < 1) || (username.indexOf(' ') > 0)) {
         alert('Invalid username');
@@ -73,6 +188,7 @@ $(document).on("submit", "#login", function (event) {
                 $('.hide-me').hide();
                 $('.dashboard-page').show();
                 $('header nav').show();
+                $(".container nav ul li#dashboard").addClass("navSelected");
             },
             error: (jqXHR, exception) => {
                 $('.wrong_login').show();
@@ -110,34 +226,6 @@ $(document).on("click", ".buttonN_add", function (event) {
     })
 });
 
-//Populate a nutrition text
-function populateNutritionRecords(username) {
-    $.ajax({
-            type: 'GET',
-            url: '/nutrition/get/' + username,
-            dataType: 'json',
-            contentType: 'application/json'
-        })
-        .done(function (result) {
-            console.log(result);
-            var buildTheHtmlOutput = "";
-
-            $.each(result.nutritions, function (nutritionsArrayKey, nutritionsArrayValue) {
-                buildTheHtmlOutput += "<div class='box'>";
-                buildTheHtmlOutput += "<p>" + nutritionsArrayValue.nutritionText + "</p>";
-                buildTheHtmlOutput += "<input type='hidden' class='nutritionRecordsToEdit' value='" + nutritionsArrayValue._id + "'>";
-                buildTheHtmlOutput += "<button type='text' class='buttonN_delete'>Delete</button>";
-                buildTheHtmlOutput += "</div>";
-            });
-
-            $("#nutritionRecords").html(buildTheHtmlOutput);
-        })
-        .fail(function (jqXHR, error, errorThrown) {
-            console.log(jqXHR);
-            console.log(error);
-            console.log(errorThrown);
-        });
-}
 
 //add a new workout
 $(document).on("click", ".buttonW_add", function (event) {
@@ -167,34 +255,6 @@ $(document).on("click", ".buttonW_add", function (event) {
     })
 });
 
-//Populate a workout text
-function populateWorkoutRecords(username) {
-    $.ajax({
-            type: 'GET',
-            url: '/workout/get/' + username,
-            dataType: 'json',
-            contentType: 'application/json'
-        })
-        .done(function (result) {
-            console.log(result);
-            var buildTheHtmlOutput = "";
-
-            $.each(result.workouts, function (workoutsArrayKey, workoutsArrayValue) {
-                buildTheHtmlOutput += "<div class='box'>";
-                buildTheHtmlOutput += "<p>" + workoutsArrayValue.workoutText + "</p>";
-                buildTheHtmlOutput += "<input type='hidden' class='workoutRecordsToEdit' value='" + workoutsArrayValue._id + "'>";
-                buildTheHtmlOutput += "<button type='text' class='buttonW_delete'>Delete</button>";
-                buildTheHtmlOutput += "</div>";
-            });
-
-            $("#workoutRecords").html(buildTheHtmlOutput);
-        })
-        .fail(function (jqXHR, error, errorThrown) {
-            console.log(jqXHR);
-            console.log(error);
-            console.log(errorThrown);
-        });
-}
 
 // add a new progress
 $(document).on("click", ".buttonP_add", function (event) {
@@ -225,34 +285,6 @@ $(document).on("click", ".buttonP_add", function (event) {
     })
 });
 
-//Populate a progress text
-function populateProgressRecords(username) {
-    $.ajax({
-            type: 'GET',
-            url: '/progress/get/' + username,
-            dataType: 'json',
-            contentType: 'application/json'
-        })
-        .done(function (result) {
-            console.log(result);
-            var buildTheHtmlOutput = "";
-
-            $.each(result.progresses, function (progressesArrayKey, progressesArrayValue) {
-                buildTheHtmlOutput += "<div class='box'>";
-                buildTheHtmlOutput += "<p>" + progressesArrayValue.progressText + "</p>";
-                buildTheHtmlOutput += "<input type='hidden' class='progressRecordsToEdit' value='" + progressesArrayValue._id + "'>";
-                buildTheHtmlOutput += "<button type='text' class='buttonP_delete'>Delete</button>";
-                buildTheHtmlOutput += "</div>";
-            });
-
-            $("#progressRecords").html(buildTheHtmlOutput);
-        })
-        .fail(function (jqXHR, error, errorThrown) {
-            console.log(jqXHR);
-            console.log(error);
-            console.log(errorThrown);
-        });
-}
 
 $(document).on("click", ".activate-login", function (event) {
     event.preventDefault();
@@ -263,6 +295,14 @@ $(document).on("click", ".activate-login", function (event) {
 
 $(document).on("click", "#dashboard", function (event) {
     event.preventDefault();
+
+
+    //remove the selected class on all the nav items
+    $(".container nav ul li").removeClass("navSelected");
+    //add selected class only on the current item
+    $(this).addClass("navSelected");
+
+
     $('.hide-me').hide();
     $('.dashboard-page').show();
     $('header nav').show();
@@ -270,6 +310,13 @@ $(document).on("click", "#dashboard", function (event) {
 
 $(document).on("click", "#champion", function (event) {
     event.preventDefault();
+
+
+    //remove the selected class on all the nav items
+    $(".container nav ul li").removeClass("navSelected");
+    //add selected class only on the current item
+    $(this).addClass("navSelected");
+
     $('.hide-me').hide();
     $('.champion-page').show();
     $('header nav').show();
@@ -277,6 +324,13 @@ $(document).on("click", "#champion", function (event) {
 
 $(document).on("click", "#home", function (event) {
     event.preventDefault();
+
+
+    //remove the selected class on all the nav items
+    $(".container nav ul li").removeClass("navSelected");
+    //add selected class only on the current item
+    $(this).addClass("navSelected");
+
     $('.hide-me').hide();
     $('.home-page').show();
     $('header nav').show();
@@ -284,6 +338,13 @@ $(document).on("click", "#home", function (event) {
 
 $(document).on("click", "#rec", function (event) {
     event.preventDefault();
+
+    //remove the selected class on all the nav items
+    $(".container nav ul li").removeClass("navSelected");
+    //add selected class only on the current item
+    $(this).addClass("navSelected");
+
+    //take the input from the user
     let username = $('.nutritionUserName').val();
     populateProgressRecords(username);
     populateWorkoutRecords(username);

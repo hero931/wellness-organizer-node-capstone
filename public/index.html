@@ -23,7 +23,6 @@
                     <ul>
                         <li id="dashboard"><a href="dashboard.html">Dashboard</a></li>
                         <li id="champion"><a href="champion.html">Champion</a></li>
-                        <li id="home"><a href="home.html">Home</a></li>
                         <li id="rec"><a href="records.html">Records</a></li>
                         <li id="logout"><a onclick="location.reload();">Logout <span class="logout-user"></span></a></li>
                     </ul>
@@ -61,9 +60,9 @@
                 <form name="sign_up_form" id="signup_form">
                     <div class="signup_success hide-me">Good job! You have successfully signed up! Now you can login!</div>
                     <div class="signup_fail hide-me">Please check again! This email has already been used for signup.</div>
-                    <input type="text" placeholder="First Name" value="userName" id="firstName" class="input" required>
-                    <input type="email" placeholder="Enter Email" value="demo@email.com" id="username" class="input username_input" required>
-                    <input type="password" placeholder="Enter Password" value="demouser" id="password" class="input password_input " required>
+                    <input type="text" placeholder="First Name" value="" id="firstName" class="input" required>
+                    <input type="email" placeholder="Enter Email" value="" id="username" class="input username_input" required>
+                    <input type="password" placeholder="Enter Password" value="" id="password" class="input password_input " required>
                     <button type="submit" class="button_submit">Register</button>
                     <br>
                     <a href="" class="activate-login">Already have account. Login here!</a>
@@ -80,11 +79,11 @@
                             <legend>Login</legend>
                             <label for="email">Email Address </label>
                             <br>
-                            <input type="email" placeholder="Enter Email" value="demo@email.com" required>
+                            <input type="email" id="loginUsername" placeholder="Enter Email" value="demo@email.com" required>
                             <br>
                             <label for="password">Password </label>
                             <br>
-                            <input type="password" placeholder="Enter Password" value="demouser" required>
+                            <input type="password" id="loginPassword" placeholder="Enter Password" value="demouser" required>
                             <br>
                             <button type="submit" id="login_submit" class="button_submit">Submit</button>
                             <p>If you are interested in testing Wellness Organizer, please use the demo account. Username: demo@email.com; Password: demouser</p>

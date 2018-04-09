@@ -104,7 +104,7 @@ app.post('/users/signin', function (req, res) {
     console.log(pw, user);
     User
         .findOne({
-            username: req.body.userName
+            userName: req.body.username
         }, function (err, items) {
             if (err) {
                 return res.status(500).json({

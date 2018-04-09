@@ -29,7 +29,6 @@ header {
 header a {
     color: #ffffff;
     text-decoration: none;
-    text-transform: uppercase;
     font-size: 16px;
     transition: color 600ms;
 }
@@ -70,9 +69,6 @@ header nav {
     margin-top: 10px;
 }
 
-ul span {
-    margin-left: 20px;
-}
 
 ul li a .logout-user {
     color: #e8491d;
@@ -91,6 +87,15 @@ ul li a .logout-user {
     margin-bottom: 20px;
     text-align: center;
 
+}
+
+.navSelected a {
+    color: #e8491d;
+    font-weight: bold
+}
+
+.navSelected a:hover {
+    color: red;
 }
 
 #main {
@@ -314,6 +319,8 @@ ul li a .logout-user {
     text-decoration: none;
     margin-top: 20px;
     font-size: 17px;
+    color: #e8491d;
+    padding: 0.5rem 2rem;
 }
 
 #signup_section a:hover {
@@ -386,11 +393,11 @@ footer {
         width: 100%;
         margin-bottom: 5%;
     }
-    header nav li {
-        padding: 2%;
+    .container {
+        width: 90%;
     }
-    span {
-        margin-left: 10px;
+    header nav li {
+        padding: 0.5%;
     }
     /*#landing_section {
         background-position: top left;
@@ -502,9 +509,20 @@ footer {
     }
 }
 
+@media only screen and (max-width: 480px) {
+
+    header nav li {
+        display: block;
+        width: 100%;
+    }
+}
+
 @media only screen and (max-width: 320px) {
     body {
         font-size: 13px;
+    }
+    .container {
+        width: 95%;
     }
     header #header,
     header nav,
@@ -523,9 +541,6 @@ footer {
         margin-left: 22px;
     }
 
-    ul span {
-        margin-left: 22px;
-    }
     #landing_section h1 {
         font-size: 18px;
     }
