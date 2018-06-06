@@ -25,7 +25,7 @@ function populateProgressRecords(username) {
             }
             // if the are no records show a friendly error
             else {
-                buildTheHtmlOutput += "<div class='box'>No progresses found</div>";
+                buildTheHtmlOutput += "<div class='box'>No progress found</div>";
             }
 
 
@@ -64,7 +64,7 @@ function populateNutritionRecords(username) {
             }
             // if the are no records show a friendly error
             else {
-                buildTheHtmlOutput += "<div class='box'>No nutritions found</div>";
+                buildTheHtmlOutput += "<div class='box'>No nutrition found</div>";
             }
 
             $("#nutritionRecords").html(buildTheHtmlOutput);
