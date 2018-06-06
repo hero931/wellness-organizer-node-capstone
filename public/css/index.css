@@ -518,7 +518,7 @@ footer {
     }
 }
 
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 324px) {
     body {
         font-size: 13px;
     }
@@ -556,7 +556,7 @@ footer {
     #landing_section .container {
         width: 80%;
         color: dimgrey;
-        margin-top: 100%;
+        margin-top: 70%;
         margin-bottom: 40px;
     }
     #signup_section a {
